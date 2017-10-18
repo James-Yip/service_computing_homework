@@ -3,7 +3,8 @@ selpg is a useful program that extracts a specified range of pages from an input
 Here, I implement it by Golang, referring to [开发Linux命令行实用程序](https://www.ibm.com/developerworks/cn/linux/shell/clutil/index.html).
 
 ## Usage
-> Usage of selpg: ./selpg -s number -e number [-f | -l number] [-d string] [in_filename]
+```
+Usage of selpg: ./selpg -s number -e number [-f | -l number] [-d string] [in_filename]
   -s int
       the start page number to extract an input text(mandatory) (default -1)
   -e int
@@ -16,6 +17,7 @@ Here, I implement it by Golang, referring to [开发Linux命令行实用程序](
     	#lines of each page (default 72)
   in_filename string
       the name of the input file
+```
 
 ## Design Introduction
 The selpg program can be divided into three parts:
