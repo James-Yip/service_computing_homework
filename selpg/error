@@ -1,0 +1,12 @@
+selpg: The end page should be greater than the start page.
+Usage of /tmp/go-build366640885/command-line-arguments/_obj/exe/selpg:
+  -d string
+    	the destination to output the selected pages
+  -e int
+    	the end page number to extract an input text(mandatory) (default -1)
+  -f	use form feed to define the pages of an input text
+  -l int
+    	#lines of each page (default 72)
+  -s int
+    	the start page number to extract an input text(mandatory) (default -1)
+exit status 1
