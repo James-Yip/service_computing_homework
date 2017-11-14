@@ -98,3 +98,22 @@ Percentage of the requests served within a certain time (ms)
 ```
 
 The result shows that the server served the total 1000 requests(with concurrent connections = 100) from the client within 44ms.
+
+### Parameter Interpretation
+Here is the interpretation for some important parameters:
+
+- Requests per second
+
+    The indication of a server's concurrent processing capacity.
+    > Formula: Request per second = total requests# / Time taken for tests
+
+
+- Time per request (for client)
+
+    The indication of clients' average waiting time (from sending requset to receiving response).
+    > Formula: Time per request = Time taken for tests/ (total requests# / Concurrency Level）
+
+- Time per request (for server)
+
+    The indication of a server's average processing time (process all concurrent requests).
+    > Formula: Time taken for tests / total requests#
