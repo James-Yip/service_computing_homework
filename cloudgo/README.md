@@ -5,7 +5,7 @@
 # cloudgo
 cloudgo is a simple web service program that return a string (with the format "hello {user}!") based on the request url.
 
-## Middlewares
+## Framework
 Since the cloudgo is really simple, I choose a tiny scheme with some lightweight components.
 
 Scheme : `gorilla/mux` + `urfave/negroni`
