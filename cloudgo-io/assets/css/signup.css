@@ -1,0 +1,77 @@
+body {
+    text-align: center;
+    background-color: #F1F2F3;
+    font-family: '微软雅黑', serif;
+    font-size: 25px;
+}
+
+h1 {
+    font-family: '微软雅黑', serif;
+    font-weight: lighter;
+    font-size: 45px;
+}
+
+.container {
+    width: 420px;
+    height: 260px;
+    margin: 0 auto;
+    padding-top: 15px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    -moz-box-shadow: 0px 0px 10px gray;
+    -webkit-box-shadow: 0px 0px 10px gray;
+    box-shadow: 0px 0px 10px gray;
+}
+
+input {
+    font-family: '微软雅黑', serif;
+    font-weight: lighter;
+    font-size: 25px;
+    border: none;
+    outline-style: none;
+    border-bottom: 1px gray solid;
+    margin: 0px 5px 0px 5px;
+}
+
+.container div {
+    margin: 15px;
+}
+
+.container :not(:first-child) > input  {
+    margin-right: -20px;
+}
+
+.error {
+    color: #9c5656;
+    display: block;
+    font-size: 15px;
+    opacity: 0;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.button {
+    width: 60px;
+    height: 40px;
+    font-size: 22px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 3px gray;
+    -webkit-box-shadow: 0 0 3px gray;
+    box-shadow: 0 0 3px gray;
+    border: none;
+    outline-color: gray;
+    margin: 10px;
+    background-color: #F1F2F3;
+}
+
+.button:hover {
+    background-color: #dcdcdc;
+    -moz-box-shadow: 0 0 10px gray;
+    -webkit-box-shadow: 0 0 10px gray;
+    box-shadow: 0 0 10px gray;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
