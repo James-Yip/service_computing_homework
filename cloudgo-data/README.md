@@ -78,6 +78,69 @@ $ curl http://localhost:8080/service/userinfo?userid=
 
 
 ## AB Test
+
+Using database/sql:
+```
+$ ab -n 1000 -c 100 http://localhost:8080/service/userinfo?userid=1
+This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:
+Server Hostname:        localhost
+Server Port:            8080
+
+Document Path:          /service/userinfo?userid=1
+Document Length:        102 bytes
+
+Concurrency Level:      100
+Time taken for tests:   0.562 seconds
+Complete requests:      1000
+Failed requests:        0
+Non-2xx responses:      1000
+Total transferred:      235000 bytes
+HTML transferred:       102000 bytes
+Requests per second:    1779.56 [#/sec] (mean)
+Time per request:       56.194 [ms] (mean)
+Time per request:       0.562 [ms] (mean, across all concurrent requests)
+Transfer rate:          408.40 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.8      0       3
+Processing:     5   54  25.8     50     141
+Waiting:        5   53  25.9     50     141
+Total:          5   54  25.8     51     141
+
+Percentage of the requests served within a certain time (ms)
+  50%     51
+  66%     64
+  75%     72
+  80%     80
+  90%     90
+  95%     99
+  98%    112
+  99%    121
+ 100%    141 (longest request)
+```
+
+
+Using orm (xorm):
+
 ```
 $ ab -n 1000 -c 100 http://localhost:8080/service/userinfo?userid=1
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
@@ -136,4 +199,11 @@ Percentage of the requests served within a certain time (ms)
  100%    237 (longest request)
 ```
 
-The result shows that the server served the total 1000 requests(with concurrent connections = 100) from the client within 237ms.
+Comparison:
+- performance
+
+    The AB test shows that using original database/sql library (141ms) is faster than using xorm (237ms).
+
+- coding efficiency
+
+    Using xorm is better than database/sql since it has encapsulated some frequently used methods. For example, we can finish the insert operation just with one-line code while much more requested when using database/sql.
